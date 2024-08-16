@@ -1,79 +1,35 @@
 import { useEffect } from "react";
 import { useState } from "react"
+import img from '../../assets/avataart.webp'
 
 export function Home() {
-    const [first, setfirst] = useState('first')
-    let [count, setCount] = useState(0);
-    let [userName, setName] = useState('ahmed');
-    let [product, setProduct] = useState('Apple');
-    let [products, setProducts] = useState([
-        { pName: '1', price: 200 },
-        { pName: '2', price: 300 },
-        { pName: '3', price: 700 }
-    ]);
-    function changeName() {
-        setName('esraa');
-    }
-    function changeCount() {
-        setCount(Math.round(Math.random() * 10));
-    }
+    return (<>
+        <div className="bg-teal-500 h-[80vh]">
 
-    useEffect(() => {
-        if (count == 0 && userName== 'ahmed') {
-        return;
-    }
-        else {
+            <div className="container w-[80%] mx-auto pt-[4rem] mt-20">
+                <div className="content text-white flex flex-col text-center items-center ">
+                    <div className="img w-[20rem]">
+                        <img src={img} alt="" />
+                    </div>
+                    <div className="info">
+                        <div className="head mb-5">
+                            <h2 className="text-4xl font-bold mb-5">START FRAMEWORK</h2>
+                            <div className="flex gap-5 items-center">
+                                <div className="line bg-white h-1 ms-10 w-[6rem]"></div>
+                                <i className="fa fa-star"></i>
+                                <div className="line bg-white h-1 me-10 w-[6rem]"></div>
 
-        console.log('update');
-    }
-    //did Mount
-    // //call api
-    // console.log('mount');
-    // let x = setInterval(() => {
-    //     console.log('mountinnnng');
-    // }, 1000)
-    return () => {
-        // // will un mount
+                            </div>
+                        </div>
+                        <div>
+                            <span>Graphic Artist - Web Designer - Illustrator
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        // clearInterval(x)
-    }
-}, [count, userName])
 
-// useEffect(() => {
-//     if (userName == 'ahmed') {
-//         return;
-
-//     }
-//     else {
-//         console.log('changed');
-//     }
-
-//     return () => {
-//         console.log('sstoped');
-//     }
-// }, [userName])
-return (
-    <>
-
-        <h1 className="pb-5">This is the Home Component</h1>
-        <h2 className="pb-5">Hello {userName}</h2>
-        <button className="pb-6" onClick={changeName}>Change Name</button>
-        <br />
-        <br />
-        <span className="">Count {count}</span>
-        <br />
-        <br />
-        <button className="pb-5" onClick={() => { changeCount() }}>change Count</button>
-
-        <h3 className="pb-5">
-            product    {product}
-        </h3>
-        <br />
-        <br />
-        <p>{first}</p>
-        <ul>
-            <li>{ }</li>
-        </ul>
-    </>
-);
+    </>)
 }
