@@ -33,20 +33,21 @@ function toggole() {
             links.classList.add('hidden');
         };
     }
-}
-window.addEventListener('scroll', function () {
+} window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
-    if (links.classList.contains('hidden')) {
+    const links = document.getElementById('links');
+
+    if (links && links.classList.contains('hidden')) {
         if (window.scrollY > 70) {
             navbar.classList.add('shrink');
         } else {
             navbar.classList.remove('shrink');
         }
-    }
-    else {
-        navbar.classList.remove('shrink')
+    } else {
+        navbar.classList.remove('shrink');
     }
 });
+
 
 export function Navbar() {
     return (
