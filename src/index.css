@@ -19,6 +19,21 @@
 
 }
 
+@media screen and (max-width:750px) {
+    .nav {
+        font-size: 16px;
+        gap: 10px;
+        height: 10rem;
+    }
+
+    .navbar.shrink {
+        transition: all.6s ease;
+        height: 9ز5rem;
+        @apply py-4;
+
+    }
+}
+
 @media screen and (max-width:400px) {
     .nav {
         font-size: 16px;
